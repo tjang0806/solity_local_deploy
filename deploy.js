@@ -3,12 +3,11 @@ const Web3 = require('web3');
 // created by compile script
 const { interface, bytecode } = require('./compile');
 
-// specifying the provider
-// you need nmonic (in my case, I used ganache )
-// and url where to deploy (http://localhost:8545/ is the ganache's url)
+// specifying the provider with two parameter
+// 1.nmonic (in my case, I used ganache )
+// 2.url where to deploy (http://localhost:8545/ is the ganache's url)
 const provider = new HDWalletProvider(
   'stumble region click broccoli pupil one tag boost whip spin over live',
-  //'https://rinkeby.infura.io/aKl1Ey5vmdHxGQjz7RnS'
   'http://localhost:8545/'
 );
 const web3 = new Web3(provider);
@@ -21,7 +20,7 @@ const deploy = async () => {
   // display account
   console.log('attempting to deploy from account', accounts[0]);
 
-  // in data, I add '0x' to save gas(found from stack over flow)
+  // in data, I add '0x' to save gas(found from stackoverflow)
       //it wiill assume the bytecode in hexadecimal
       //if you do not add it, it consider bytecode as string. Then change the string to hex
   // for contructor, I need to add initial message. Therefore I add 'hello world'
